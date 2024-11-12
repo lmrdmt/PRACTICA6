@@ -1,0 +1,40 @@
+
+
+services:
+  asir_bind9:
+    container_name: asir_bind9 
+    image: ubuntu/bind9
+    platform: linux/amd64
+    ports: 
+      - "54:54/udp"
+      - "54:54/tcp"
+    networks:
+      bind9_subnet:
+        ipv4_address: 192.168.1.254
+    volumes:
+      - ./conf:/etc/bind
+      - ./zonas:/var/lib/bind
+
+  cliente:
+    container_name: cliente
+    image: ubuntu
+    platform: linux/amd64
+    tty: true
+    stdin_open: true
+    dns:
+      - 192.168.1.254
+    networks:
+      bind9_subnet:
+        ipv4_address: 192.168.1.2
+    
+networks:
+  bind9_subnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+
+
+
+  
+
