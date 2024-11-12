@@ -89,15 +89,8 @@ Para detener e eliminar os contedores e recursos asociados, executa:
 docker-compose down
 ```
 
-Aquí tes o arquivo README actualizado cunha explicación detallada sobre os arquivos de configuración empregados para Bind9.
-
 ---
 
-# Proxecto de Configuración DNS con Bind9 en Docker
-
-Este proxecto usa Docker para configurar un servidor DNS con Bind9 nun contedor, xunto cun contedor cliente configurado para usar este servidor DNS. A continuación, inclúese unha descrición dos arquivos de configuración que controlan o comportamento e as zonas xestionadas polo servidor DNS.
-
----
 
 ## Arquivos de Configuración de Bind9
 
